@@ -2,41 +2,46 @@
 #include <string.h>
 #include <stdlib.h>
 
-char charStack[256];
+int int_queue[256];
 int count = 0;
 
-void push(char x)
+void insert(int x)
 {
     if (count == 256)
     {
         printf("there is not space left in the int stack\n");
         return;
     }
-    charStack[count] = x;
-    count++;
+    int_queue[count] = x;
+    count ++;
 }
 
-char pop()
+int delete()
 {
     if (count == 0)
     {
         printf("nother to take from the int stack\n");
         exit(-1);
     }
-    char result = charStack[count - 1];
-    count--;
+    int result = int_queue[0];
+    for (int i = 0; i < count - 1; i++)
+    {
+        int_queue[i] = int_queue[i + 1];
+    }
+    count --;
     return result;
 }
 
 int main()
 {
-    push('1');
-    push('b');
-    push('+');
+    insert(1);
+    insert(2);
+    insert(5);
+    insert(10);
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
-        printf("%c\n", pop());
+        printf("%d\n", delete());
     }
 
     return 0;
