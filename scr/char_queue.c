@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char char_queue[256];
+char charQueue[256];
 int count = 0;
 
 void insert(char x)
@@ -12,7 +12,7 @@ void insert(char x)
         printf("there is not space left in the char stack\n");
         return;
     }
-    char_queue[count] = x;
+    charQueue[count] = x;
     count ++;
 }
 
@@ -23,10 +23,10 @@ char delete()
         printf("nother to take from the char stack\n");
         exit(-1);
     }
-    char result = char_queue[0];
+    char result = charQueue[0];
     for (int i = 0; i < count - 1; i++)
     {
-        char_queue[i] = char_queue[i + 1];
+        charQueue[i] = charQueue[i + 1];
     }
     count --;
     return result;
@@ -38,7 +38,7 @@ int main()
     insert('b');
     insert('+');
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 3; i++)
     {
         printf("%c\n", delete());
     }

@@ -5,7 +5,7 @@
 int charStack[256];
 int count = 0;
 
-void push(int x)
+void push(char x)
 {
     if(count == 256)
     {
@@ -16,30 +16,27 @@ void push(int x)
     count++;
 }
 
-int pop()
+char pop()
 {
     if(count == 0)
     {
         printf("nother to take from the int stack\n");
         exit(-1);
     }
-    int result = charStack[count - 1];
+    char result = charStack[count - 1];
     count--;
     return result;
 }
 
 int main()
 {
-    push(2);
-    push(11);
-    push(-8);
-    push(27);
-    push(-125);
-    push(296);
+    push('1');
+    push('b');
+    push('+');
 
-    for(int i = 0; i < 6; i++)
+    for(int i = 0; i < 3; i++)
     {
-        printf("%d\n", pop());
+        printf("%c\n", pop());
     }
 
     return 0;

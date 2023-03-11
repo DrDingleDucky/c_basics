@@ -5,7 +5,7 @@ int main()
 {
     char unit;
     float temperature;
-    float converted_temperature;
+    float convertedTemperature;
 
     printf("is the temerature in (c) or (f): ");
     scanf("%c", &unit);
@@ -17,18 +17,18 @@ int main()
         printf("enter the temperature in celsius: ");
         scanf("%f", &temperature);
 
-        converted_temperature = (temperature * 9 / 5) + 32;
+        convertedTemperature = (temperature * 9 / 5) + 32;
 
-        printf("%.1f celsius in fahrenheit is %.1f\n", temperature, converted_temperature);
+        printf("%.1f celsius in fahrenheit is %.1f\n", temperature, convertedTemperature);
     }
     else if (unit == 'f')
     {
         printf("enter the temperature in fahrenheit: ");
         scanf("%f", &temperature);
 
-        converted_temperature = (temperature - 32) * 5 / 9;
+        convertedTemperature = (temperature - 32) * 5 / 9;
 
-        printf("%.1f fahrenheit in celsius is %.1f\n", temperature, converted_temperature);
+        printf("%.1f fahrenheit in celsius is %.1f\n", temperature, convertedTemperature);
     }
     else
     {

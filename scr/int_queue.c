@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int int_queue[256];
+int intQueue[256];
 int count = 0;
 
 void insert(int x)
@@ -12,7 +12,7 @@ void insert(int x)
         printf("there is not space left in the int stack\n");
         return;
     }
-    int_queue[count] = x;
+    intQueue[count] = x;
     count ++;
 }
 
@@ -23,10 +23,10 @@ int delete()
         printf("nother to take from the int stack\n");
         exit(-1);
     }
-    int result = int_queue[0];
+    int result = intQueue[0];
     for (int i = 0; i < count - 1; i++)
     {
-        int_queue[i] = int_queue[i + 1];
+        intQueue[i] = intQueue[i + 1];
     }
     count --;
     return result;
